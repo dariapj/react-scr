@@ -14,17 +14,30 @@ import ReactDOM from 'react-dom/client';
     <p>Hello world</p>
   </div>
 )*/
+const Title = () => {
+  return <h1>Hello world</h1>
+}
 
-const App = () => {
+const Content = () => {
   return (
     <div>
-      <h1>Hello React</h1>
-      <p>
+       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit autem quos inventore sunt voluptates ea enim odit minus fugit ullam itaque quis, dolore veritatis sint, quam quo aut? Velit, a!
       </p>
       <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit autem quos inventore sunt voluptates ea enim odit minus fugit ullam itaque quis, dolore veritatis sint, quam quo aut? Velit, a!
     </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit autem quos inventore sunt voluptates ea enim odit minus fugit ullam itaque quis, dolore veritatis sint, quam quo aut? Velit, a!
+    </p>
+    </div>
+  )
+}
+const App = () => {
+  return (
+    <div>
+      <Title />
+      <Content />
     </div>
   )
 }
