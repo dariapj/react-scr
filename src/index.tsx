@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Title from './Title'
+import {Title} from './Title'
 
 //const title = React.createElement('h1', null, 'Hello')
 //const title = <h1 id="title">Hello</h1>
@@ -21,17 +21,12 @@ import Title from './Title'
   return <h1>Hello React</h1>
 }*/
 
-type TitleProps = {
-title?: string | number
-}
 
 type ContentProps = {
   p1: string
   p2: string
 }
 
-const Title = (props: TitleProps) => {console.log(props)
-  return <h1>Hello {props.title}</h1>}
 
 /*const Title2 = () => {
   return <h1>Hello App</h1>
