@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {Title} from './Title'
+
 
 //const title = React.createElement('h1', null, 'Hello')
 //const title = <h1 id="title">Hello</h1>
@@ -22,7 +22,7 @@ import {Title} from './Title'
 }*/
 
 
-type ContentProps = {
+/*type ContentProps = {
   p1: string
   p2: string
 }
@@ -31,7 +31,7 @@ type ContentProps = {
 /*const Title2 = () => {
   return <h1>Hello App</h1>
 }*/
-const Content = (props: ContentProps) => {
+/*const Content = (props: ContentProps) => {
   return (
     <React.Fragment>
       <p>{props.p1}</p>
@@ -44,13 +44,13 @@ const App = () => {return (<>
 <Title title="TS" />
 <Title title={10} />
 <Content p1="hello world bla bla" p2="Hello 2022 world 222"/>
-</>)}
+</>)}*/
 
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode><App /></React.StrictMode>
+  <React.StrictMode></React.StrictMode>
 );
 
