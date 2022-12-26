@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import App from 'container/App/App'
 
 //const title = React.createElement('h1', null, 'Hello')
 //const title = <h1 id="title">Hello</h1>
@@ -51,6 +51,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode></React.StrictMode>
+  <React.StrictMode>
+    <App/>
+  </React.StrictMode>
 );
 
