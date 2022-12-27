@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from 'container/App/App'
 
 //const title = React.createElement('h1', null, 'Hello')
 //const title = <h1 id="title">Hello</h1>
@@ -14,37 +15,44 @@ import ReactDOM from 'react-dom/client';
     <p>Hello world</p>
   </div>
 )*/
-const Title = () => {
-  return <h1>Hello world</h1>
+
+
+/*const Title = () => {
+  return <h1>Hello React</h1>
+}*/
+
+
+/*type ContentProps = {
+  p1: string
+  p2: string
 }
 
-const Content = () => {
+
+/*const Title2 = () => {
+  return <h1>Hello App</h1>
+}*/
+/*const Content = (props: ContentProps) => {
   return (
     <React.Fragment>
-       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit autem quos inventore sunt voluptates ea enim odit minus fugit ullam itaque quis, dolore veritatis sint, quam quo aut? Velit, a!
-      </p>
-      <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit autem quos inventore sunt voluptates ea enim odit minus fugit ullam itaque quis, dolore veritatis sint, quam quo aut? Velit, a!
-    </p>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit autem quos inventore sunt voluptates ea enim odit minus fugit ullam itaque quis, dolore veritatis sint, quam quo aut? Velit, a!
-    </p>
+      <p>{props.p1}</p>
+      <p>{props.p2}</p>
     </React.Fragment>
   )
 }
-const App = () => {
-  return (
-    <>
-      <Title />
-      <Content />
-    </>
-  )
-}
+const App = () => {return (<>
+<Title title="React" />
+<Title title="TS" />
+<Title title={10} />
+<Content p1="hello world bla bla" p2="Hello 2022 world 222"/>
+</>)}*/
+
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode><App /></React.StrictMode>
+  <React.StrictMode>
+    <App/>
+  </React.StrictMode>
 );
 
