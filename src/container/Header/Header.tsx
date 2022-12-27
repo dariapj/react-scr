@@ -12,7 +12,7 @@ type Props = {}
 
 
 const Header = (props: Props) => {
-  let appBar = true
+  let appBar = false
   return (
     <>
     <AppBar position="static" className={`${appBar ? 'app-bar-grey' : 'app-bar'}`}>
