@@ -7,11 +7,15 @@ type Props = {
     type: string
 capacity: string
 price: string
+image: string
 }
-const ProductsListItem = ({title, desc, type, capacity, price}: Props) => {
+const ProductsListItem = ({title, desc, type, capacity, price, image}: Props) => {
   return (
     <Card className='product' variant="outlined">
         <CardContent>
+            <div className='product-img'>
+                <img src={image} alt="" />
+            </div>
         <div className="product-title">{title}</div>
         <div className="product-dec">{desc}</div>
         <div className="product-features">

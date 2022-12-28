@@ -4,11 +4,13 @@ import ProductsListItem from './ProductsListItem'
 
 
 type ProductsProps = {
+    id:number
     title: string
     desc: string
     type: string
 capacity: string
 price: string
+image: string
 }
 
 
@@ -24,9 +26,9 @@ const ProductsList = (props: Props) => {
     spacing={4}>
 
         {
-            productsArray.map(({title, desc, type, capacity, price}: ProductsProps, i) => (
-                <Grid item xs={12} sm={6} md={4} key={i}>
-                <ProductsListItem title={title} desc={desc} type={type} capacity={capacity} price={price}></ProductsListItem>
+            productsArray.map(({id, title, desc, type, capacity, price, image}: ProductsProps) => (
+                <Grid item xs={12} sm={6} md={4} key={id}>
+                <ProductsListItem title={title} desc={desc} type={type} capacity={capacity} price={price} image={image}></ProductsListItem>
             </Grid>
             ))
         }
