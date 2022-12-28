@@ -21,4 +21,12 @@
              {font-size: 19px;
                 span {font-weight: bold;}}
                 .btns-wrap {display: flex;
-                    justify-content: center;}}
+                    justify-content: center;}
+                .product-quantity{
+                    display: flex;
+                    margin-top: 15px;
+                    input{
+                        text-align: center;
+                    }
+                }
+                }

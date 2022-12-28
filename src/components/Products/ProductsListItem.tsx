@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent } from '@mui/material'
+import { Button, Card, CardActions, CardContent, TextField } from '@mui/material'
 import './ProductsListItem.scss'
 
 type Props = {
@@ -24,6 +24,8 @@ const ProductsListItem = ({title, desc, type, capacity, price, image}: Props) =>
             <span>Capacity:</span> {capacity}</div>
         <div className="product-price">
         <span>Price:</span> {price}</div>
+        <div className="product-quantity"><Button variant="outlined">-</Button>
+        <TextField value="1" size="small" /><Button variant="outlined">+</Button></div>
         </CardContent>
         <CardActions className="btns-wrap">
         <Button variant="outlined">Add to cart</Button>
