@@ -2,6 +2,17 @@ import {Grid} from '@mui/material'
 import productsArray from 'utils/productsArray'
 import ProductsListItem from './ProductsListItem'
 
+
+type ProductsProps = {
+    title: string
+    desc: string
+    type: string
+capacity: string
+price: string
+}
+
+
+
 type Props = {}
 const ProductsList = (props: Props) => {
   return (
@@ -13,8 +24,8 @@ const ProductsList = (props: Props) => {
     spacing={4}>
 
         {
-            productsArray.map(({title, desc, type, capacity, price}) => (
-                <Grid item xs={12} sm={6} md={4} >
+            productsArray.map(({title, desc, type, capacity, price}: ProductsProps, i) => (
+                <Grid item xs={12} sm={6} md={4} key={i}>
                 <ProductsListItem title={title} desc={desc} type={type} capacity={capacity} price={price}></ProductsListItem>
             </Grid>
             ))
