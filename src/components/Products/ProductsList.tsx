@@ -1,5 +1,19 @@
 import {Grid} from '@mui/material'
+import productsArray from 'utils/productsArray'
 import ProductsListItem from './ProductsListItem'
+
+
+type ProductsProps = {
+    id:number
+    title: string
+    desc: string
+    type: string
+capacity: string
+price: string
+image: string
+}
+
+
 
 type Props = {}
 const ProductsList = (props: Props) => {
@@ -10,15 +24,14 @@ const ProductsList = (props: Props) => {
     justifyContent="space-around"
     alignItems="center"
     spacing={4}>
-        <Grid item xs={12} sm={6} md={4} >
-            <ProductsListItem title="Iphone X" desc="This is Iphone X" type="phone" capacity="64GB" price="600$"></ProductsListItem>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} >
-            <ProductsListItem title="Iphone 14 Pro" desc="This is Iphone 14 Pro" type="tablet" capacity="120GB" price="800$"></ProductsListItem>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} >
-            <ProductsListItem title="Iphone 12" desc="This is Iphone 12" type="phone" capacity="72GB" price="400$"></ProductsListItem>
-        </Grid>
+
+        {
+            productsArray.map(({id, title, desc, type, capacity, price, image}: ProductsProps) => (
+                <Grid item xs={12} sm={6} md={4} key={id}>
+                <ProductsListItem title={title} desc={desc} type={type} capacity={capacity} price={price} image={image}></ProductsListItem>
+            </Grid>
+            ))
+        }
     </Grid>
     </>
   )
