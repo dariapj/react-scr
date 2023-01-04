@@ -17,18 +17,15 @@ type State = {
 
 class ProductsListItem extends Component <Props, State>{
 
-constructor(props:Props) {
-    super(props)
-    this.onIncement = this.onIncement.bind(this)
-    this.state = {
-        count: 1,
-    }
+state = {
+    count: 1,
 }
-onIncement() {
-    this.setState ((prevState: State) => ({
+ onIcrement () {
+    this.setState((prevState: State) => ({
         count: prevState.count + 1,
     }))
-}
+ }
+
     render() {
         const {
             title, desc, type, capacity, price, image} = this.props
@@ -49,7 +46,7 @@ onIncement() {
         <span>Price:</span> {price}</div>
         <div className="product-quantity"><Button variant="outlined">-</Button>
         <TextField value={this.state.count} size="small" />
-        <Button variant="outlined" onClick={this.onIncement}>+</Button></div>
+        <Button variant="outlined" onClick={() => this.onIcrement()}>+</Button></div>
         </CardContent>
         <CardActions className="btns-wrap">
         <Button variant="outlined">Add to cart</Button>
@@ -59,6 +56,7 @@ onIncement() {
 
     }
 }
+
 
 
 
