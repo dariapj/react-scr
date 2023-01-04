@@ -45,4 +45,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9a861299-ae03-4aaf-a75a-368975f8b18b/deploy-status)](https://app.netlify.com/sites/genuine-stardust-bd5113/deploys)
+
