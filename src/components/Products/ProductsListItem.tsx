@@ -13,7 +13,7 @@ image: string
 const ProductsListItem = ({title, desc, type, capacity, price, image}: Props) => {
 
     const [count, setCount] = useState<number>(1)
-    const [color, setColor] = useState<string>('green')
+   // const [color, setColor] = useState<string>('green')
 
     const onIncrementClick = () =>{
         setCount((prevState: number) => prevState + 1)
@@ -22,7 +22,7 @@ const ProductsListItem = ({title, desc, type, capacity, price, image}: Props) =>
     const onDeccrementClick = () =>{
         setCount((prevState: number) => prevState - 1)
     }
-const changeColor = () => {
+/*const changeColor = () => {
     setColor((prevState: string) => {
         if (prevState === "green") {
             return 'red'
@@ -30,7 +30,7 @@ const changeColor = () => {
             return 'green'
         }
     })
-}
+}*/
   return (
     <Card className='product' variant="outlined">
         <CardContent>
@@ -45,8 +45,8 @@ const changeColor = () => {
             <span>Capacity:</span> {capacity}</div>
         <div className="product-price">
         <span>Price:</span> {price}</div>
-        <div className={`${color}`}>Color: {color}</div>
-        <button onClick={changeColor}>Change color</button>
+        <p>Color: green</p>
+        <button>Change color</button>
         <div className="product-quantity"><Button variant="outlined" onClick={ onDeccrementClick} disabled={count <= 1}>-</Button>
         <TextField value={count} size="small" /><Button variant="outlined" onClick={onIncrementClick} disabled={count >= 10}>+</Button></div>
         </CardContent>
