@@ -11,7 +11,7 @@ totalCount: number
 totalPrice: number
 }
 const App = (props: Props) => {
-  const [cartData, setCartData] = useState<CartData>({
+  const [cartData] = useState<CartData>({
     totalCount: 0,
     totalPrice: 0,
   })
