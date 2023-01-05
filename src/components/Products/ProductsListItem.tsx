@@ -7,7 +7,7 @@ type Props = {
     desc: string
     type: string
 capacity: string
-price: string
+price: number
 image: string
 }
 const ProductsListItem = ({title, desc, type, capacity, price, image}: Props) => {
@@ -44,7 +44,7 @@ const ProductsListItem = ({title, desc, type, capacity, price, image}: Props) =>
         <div className="product-features">
             <span>Capacity:</span> {capacity}</div>
         <div className="product-price">
-        <span>Price:</span> {price}</div>
+        <span>Price:</span> {price}$</div>
         <div className="product-quantity"><Button variant="outlined" onClick={ onDeccrementClick} disabled={count <= 1}>-</Button>
         <TextField value={count} size="small" /><Button variant="outlined" onClick={onIncrementClick} disabled={count >= 10}>+</Button></div>
         </CardContent>

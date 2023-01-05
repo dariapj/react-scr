@@ -9,7 +9,7 @@ type ProductsProps = {
     desc: string
     type: string
 capacity: string
-price: string
+price: number
 image: string
 }
 
