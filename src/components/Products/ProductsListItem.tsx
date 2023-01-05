@@ -45,8 +45,6 @@ const ProductsListItem = ({title, desc, type, capacity, price, image}: Props) =>
             <span>Capacity:</span> {capacity}</div>
         <div className="product-price">
         <span>Price:</span> {price}</div>
-        <p>Color: green</p>
-        <button>Change color</button>
         <div className="product-quantity"><Button variant="outlined" onClick={ onDeccrementClick} disabled={count <= 1}>-</Button>
         <TextField value={count} size="small" /><Button variant="outlined" onClick={onIncrementClick} disabled={count >= 10}>+</Button></div>
         </CardContent>
