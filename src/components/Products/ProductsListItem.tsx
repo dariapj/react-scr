@@ -9,8 +9,9 @@ type Props = {
 capacity: string
 price: number
 image: string
+addProductToCart:(count: number, price: number) => void
 }
-const ProductsListItem = ({title, desc, type, capacity, price, image}: Props) => {
+const ProductsListItem = ({title, desc, type, capacity, price, image, addProductToCart}: Props) => {
 
     const [count, setCount] = useState<number>(1)
    // const [color, setColor] = useState<string>('green')
@@ -49,7 +50,7 @@ const ProductsListItem = ({title, desc, type, capacity, price, image}: Props) =>
         <TextField value={count} size="small" /><Button variant="outlined" onClick={onIncrementClick} disabled={count >= 10}>+</Button></div>
         </CardContent>
         <CardActions className="btns-wrap">
-        <Button variant="outlined">Add to cart</Button>
+        <Button variant="outlined" onClick={() => addProductToCart(count, price)}>Add to cart</Button>
         </CardActions>
     </Card>
   )
