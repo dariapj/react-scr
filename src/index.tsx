@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from 'container/App/App'
+import { BrowserRouter } from 'react-router-dom'
 
 //const title = React.createElement('h1', null, 'Hello')
 //const title = <h1 id="title">Hello</h1>
@@ -52,7 +53,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
     <App/>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
