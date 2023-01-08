@@ -22,7 +22,10 @@ const CartHeader = ({productsInCart, productsObject = getProductsObject(products
         ))
       }
       </div>
-      <div></div>
+      <div>Total: { ' ' }
+        {
+        Object.keys(productsInCart).reduce((total, productId) => (total + productsInCart[parseInt(productId)] * productsObject[parseInt(productId)].price),0)
+        } $</div>
     </div>
 
   )
