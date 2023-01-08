@@ -18,8 +18,11 @@ const [productsInCart, setProductsInCart] = useState<ProductsInCart>({
   2:1,
 })
 
-const addProductToCart = (count:number, price:number) => {
-  
+const addProductToCart = (id:number, count:number) => {
+  setProductsInCart((prevState:ProductsInCart) => ({
+    ...prevState,
+    [id] : prevState[id] + count,
+  }))
 }
   
   
@@ -28,6 +31,7 @@ const addProductToCart = (count:number, price:number) => {
     <StyledEngineProvider injectFirst>
     <CssBaseline/>
     <Header productsInCart={productsInCart}/>
+    <button onClick={() => addProductToCart(1,1)}>Add to cart</button>
     <Main addProductToCart={addProductToCart}/>
     </StyledEngineProvider>
     

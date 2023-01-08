@@ -3,15 +3,16 @@ import { useState } from 'react'
 import './ProductsListItem.scss'
 
 type Props = {
+    id:number
     title: string
     desc: string
     type: string
 capacity: string
 price: number
 image: string
-addProductToCart:(count: number, price: number) => void
+addProductToCart:(id:number, count:number)  => void
 }
-const ProductsListItem = ({title, desc, type, capacity, price, image, addProductToCart}: Props) => {
+const ProductsListItem = ({id, title, desc, type, capacity, price, image, addProductToCart}: Props) => {
 
     const [count, setCount] = useState<number>(1)
    // const [color, setColor] = useState<string>('green')
@@ -50,7 +51,7 @@ const ProductsListItem = ({title, desc, type, capacity, price, image, addProduct
         <TextField value={count} size="small" /><Button variant="outlined" onClick={onIncrementClick} disabled={count >= 10}>+</Button></div>
         </CardContent>
         <CardActions className="btns-wrap">
-        <Button variant="outlined" onClick={() => addProductToCart(count, price)}>Add to cart</Button>
+        <Button variant="outlined" onClick={() => addProductToCart(id, count)}>Add to cart</Button>
         </CardActions>
     </Card>
   )

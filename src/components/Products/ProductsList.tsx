@@ -16,7 +16,7 @@ image: string
 
 
 type Props = {
-  addProductToCart:(count: number, price: number) => void
+  addProductToCart:(id:number, count:number) => void
 }
 const ProductsList = ({addProductToCart}: Props) => {
   return (
@@ -30,7 +30,7 @@ const ProductsList = ({addProductToCart}: Props) => {
         {
             productsArray.map(({id, title, desc, type, capacity, price, image}: ProductsProps) => (
                 <Grid item xs={12} sm={6} md={4} key={id}>
-                <ProductsListItem title={title} desc={desc} type={type} capacity={capacity} price={price} image={image} addProductToCart={addProductToCart}></ProductsListItem>
+                <ProductsListItem id={id} title={title} desc={desc} type={type} capacity={capacity} price={price} image={image} addProductToCart={addProductToCart}></ProductsListItem>
             </Grid>
             ))
         }
