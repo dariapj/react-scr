@@ -1,18 +1,22 @@
 import './CartHeader.scss'
-import productsArray from 'utils/productsArray'
+import productsArray, { getProductsObject, ProductsProps, } from 'utils/productsArray'
 
 type Props = {
   productsInCart: {
     [id:number]: number
   }
+  productsObject?: {
+    [id:number]: ProductsProps
+  }
 }
-const CartHeader = ({productsInCart}: Props) => {
+const CartHeader = ({productsInCart, productsObject = getProductsObject(productsArray)}: Props) => {
+
   return (
     <div>
       {
         Object.keys(productsInCart).map((productId) =>(
           <div key={productId}>
-            {productsArray[parseInt(productId) - 1].title} : {' '}
+            {productsObject[parseInt(productId)].title} : {' '}
             {productsInCart[parseInt(productId)]}
           </div>
         ))
