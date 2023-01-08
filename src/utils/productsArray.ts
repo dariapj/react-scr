@@ -1,4 +1,4 @@
-type ProductsProps = {
+export type ProductsProps = {
     id: number
     title: string
     desc: string
@@ -16,5 +16,8 @@ const productsArray:ProductsProps[] = [
     {id:5, title:"iPhone 10",desc: "This is iPhone 10",type:"phone",capacity:"48Gb", price:300, image:"/images/blue.jpg"},
     {id:6, title:"iPhone 12 Pro Max",desc: "This is iPhone 12 Pro Max",type:"phone",capacity:"124Gb", price:750, image:"/images/black.jpg"},
 ]
+
+export const getProductsObject = (array:ProductsProps[]) => array.reduce((object,product) => ({...object,
+    [product.id]:product}),{})
 
 export default productsArray
