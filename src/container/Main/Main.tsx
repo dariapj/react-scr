@@ -10,9 +10,9 @@ import Shipping from 'pages/Shipping/Shipping'
 
 type Props = {
 addProductToCart:(id:number, count:number)  => void
-
+productsInCart:{[id: number]: number}
 }
-const Main = ({addProductToCart}: Props) => {
+const Main = ({addProductToCart, productsInCart}: Props) => {
   return (
     <Container maxWidth="lg" sx={{
         padding: '50px 0'
@@ -34,7 +34,7 @@ const Main = ({addProductToCart}: Props) => {
       element={<Payment />}
         />
       <Route path="cart"
-      element={<CartPage />}
+      element={<CartPage productsInCart={productsInCart}/>}
         />
         </Routes>
     </Container>
