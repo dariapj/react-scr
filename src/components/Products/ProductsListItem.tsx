@@ -15,6 +15,7 @@ price: number
 image: string
 addProductToCart:(id:number, count:number)  => void
 isLiked?:boolean
+
 }
 const ProductsListItem = ({id, title, desc, type, capacity, price, image, addProductToCart, isLiked=false}: Props) => {
 

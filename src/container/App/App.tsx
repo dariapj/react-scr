@@ -18,7 +18,7 @@ const [productsInCart, setProductsInCart] = useState<ProductsInCart>({
   2:1,
 })
 
-const [productLikeState,setProductLikeState] = useState<ProductLikeState>({
+const [productLikeState,setProductLikeSte] = useState<ProductLikeState>({
   1: true,
   2: true,
 })
