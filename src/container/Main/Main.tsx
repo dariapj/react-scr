@@ -11,9 +11,11 @@ import Shipping from 'pages/Shipping/Shipping'
 type Props = {
 addProductToCart:(id:number, count:number)  => void
 removeProductFromCart:(id:number) => void
-productsInCart:{[id: number]: number}
+changeProductQuantity:(id:number,count:number) => void
+productsInCart:{
+  [id: number]: number}
 }
-const Main = ({addProductToCart, productsInCart, removeProductFromCart}: Props) => {
+const Main = ({addProductToCart, productsInCart, removeProductFromCart,changeProductQuantity}: Props) => {
   return (
     <Container maxWidth="lg" sx={{
         padding: '50px 0'
@@ -37,6 +39,7 @@ const Main = ({addProductToCart, productsInCart, removeProductFromCart}: Props) 
       <Route path="cart"
       element={<CartPage productsInCart={productsInCart}
       removeProductFromCart={removeProductFromCart}
+      changeProductQuantity={changeProductQuantity}
       />}
         />
         </Routes>

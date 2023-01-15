@@ -26,7 +26,10 @@ const addProductToCart = (id:number, count:number) => {
 const removeProductFromCart = (id:number) => 
   setProductsInCart((prevState: ProductsInCart) => omit(prevState,[id]))
 
-  
+  const changeProductQuantity = (id: number, count: number) => {setProductsInCart((prevState: ProductsInCart) => ({
+    ...prevState,
+    [id]: count,}))}
+
   return (
   
     <StyledEngineProvider injectFirst>
@@ -34,6 +37,7 @@ const removeProductFromCart = (id:number) =>
     <Header productsInCart={productsInCart}/>
     <Main addProductToCart={addProductToCart} productsInCart={productsInCart}
     removeProductFromCart={removeProductFromCart}
+    changeProductQuantity={changeProductQuantity}
     />
     </StyledEngineProvider>
     
