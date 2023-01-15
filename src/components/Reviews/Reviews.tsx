@@ -33,13 +33,24 @@ const handleName = (e:React.ChangeEvent<HTMLInputElement>) => {
     }))
 }
 
-const handleText = (e:React.ChangeEvent<HTMLInputElement>) => {
+const handleText = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
     setNewReview((prevState: Review) => ({
         ...prevState,
         text: e.target.value,
     }))
 }
 
+const onSend = (e: React.FormEvent<HTMLFormElement>) => {
+   e.preventDefault()
+   if (newReview.name === "" || newReview.text === "") {
+    alert('All fields are required!')
+} else {
+    setReviews((prevState: Review[]) => {
+        return [...prevState, newReview]})
+        setNewReview({name: '',text: '',})}}
+
+
+   
 
   return (
     <>
@@ -55,7 +66,7 @@ const handleText = (e:React.ChangeEvent<HTMLInputElement>) => {
                 </Card>
                 ))}
 
-<form>
+<form onSubmit={onSend}>
     <h3>Please leave a review</h3>
     <div>
         <TextField size="small" placeholder="Your name" value={newReview.name} onChange={handleName}/>
@@ -64,7 +75,7 @@ const handleText = (e:React.ChangeEvent<HTMLInputElement>) => {
     <div>
         <TextareaAutosize minRows={5} placeholder="Your text" value={newReview.text} onChange={handleText}/>
         </div>
-        <Button variant="outlined">Send</Button>
+        <Button type="submit" variant="outlined">Send</Button>
         </form>
     </>
   )

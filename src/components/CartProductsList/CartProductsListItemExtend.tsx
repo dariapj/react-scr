@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, Grid, TextField } from "@mui/material"
+import { Button, Card, CardContent, Grid } from "@mui/material"
 import { ProductsProps } from "utils/productsArray"
 import './CartProductListItemExtended.scss'
 import DeleteIcon from '@mui/icons-material/Delete';
