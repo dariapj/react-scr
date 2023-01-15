@@ -1,6 +1,9 @@
-import { Button, Card, CardActions, CardContent, TextField } from '@mui/material'
+import { Button, Card, CardActions, CardContent, } from '@mui/material'
+import Quantity from 'components/Quantity/Quantity'
 import { useState } from 'react'
 import './ProductsListItem.scss'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 
 type Props = {
     id:number
@@ -11,8 +14,9 @@ capacity: string
 price: number
 image: string
 addProductToCart:(id:number, count:number)  => void
+isLiked?:boolean
 }
-const ProductsListItem = ({id, title, desc, type, capacity, price, image, addProductToCart}: Props) => {
+const ProductsListItem = ({id, title, desc, type, capacity, price, image, addProductToCart, isLiked=false}: Props) => {
 
     const [count, setCount] = useState<number>(1)
    // const [color, setColor] = useState<string>('green')
@@ -36,6 +40,9 @@ const ProductsListItem = ({id, title, desc, type, capacity, price, image, addPro
   return (
     <Card className='product' variant="outlined">
         <CardContent>
+            <Button variant="outlined">
+{isLiked ? <FavoriteOutlinedIcon/> : <FavoriteBorderIcon/>}
+            </Button>
             <div className='product-img'>
                 <img src={image} alt="" />
             </div>
@@ -47,8 +54,10 @@ const ProductsListItem = ({id, title, desc, type, capacity, price, image, addPro
             <span>Capacity:</span> {capacity}</div>
         <div className="product-price">
         <span>Price:</span> {price}$</div>
-        <div className="product-quantity"><Button variant="outlined" onClick={ onDeccrementClick} disabled={count <= 1}>-</Button>
-        <TextField value={count} size="small" /><Button variant="outlined" onClick={onIncrementClick} disabled={count >= 10}>+</Button></div>
+        <Quantity count={count}
+        onDeccrementClick={onDeccrementClick}
+        onIncrementClick={onIncrementClick}
+        />
         </CardContent>
         <CardActions className="btns-wrap">
         <Button variant="outlined" onClick={() => addProductToCart(id, count)}>Add to cart</Button>

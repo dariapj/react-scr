@@ -5,13 +5,15 @@ import CartTotal from "components/CartTotal/CartTotal"
 
 type Props = {
   removeProductFromCart:(id:number) => void
+  changeProductQuantity:(id:number,count:number) => void
+
   productsInCart: {
     [id:number]: number
   }
  
 }
 const CartPage = ({
-  productsInCart, removeProductFromCart
+  productsInCart, removeProductFromCart,changeProductQuantity
 }: Props) => {
   return (
     <div>
@@ -24,6 +26,7 @@ const CartPage = ({
     <CartProductsList productsInCart={productsInCart}
      CartItem={CartProductsListItemExtend}
      removeProductFromCart={removeProductFromCart}
+     changeProductQuantity={changeProductQuantity}
      />
     </Grid>
      
