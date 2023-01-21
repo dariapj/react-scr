@@ -3,7 +3,7 @@ import Quantity from 'components/Quantity/Quantity'
 import { useState } from 'react'
 import './ProductsListItem.scss'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
-import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { toggleLikeState } from 'redux/likeReducer'
 
@@ -47,7 +47,7 @@ const dispatch = useAppDispatch()
     <Card className='product' variant="outlined">
         <CardContent>
         <Button variant="outlined" onClick={() => dispatch(toggleLikeState(id))}>
-            {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}</Button>
+            {isLiked ? <FavoriteOutlinedIcon /> : <FavoriteBorderIcon />}</Button>
             <div className='product-img'>
                 <img src={image} alt="" />
             </div>
