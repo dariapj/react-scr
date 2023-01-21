@@ -8,13 +8,27 @@ import {omit} from 'lodash'
 type ProductsInCart = {
   [id:number]: number
 }
-
+type ProductLikeState = {
+[id:number]:boolean
+}
 const App = () => {
  
 const [productsInCart, setProductsInCart] = useState<ProductsInCart>({
   1:5,
   2:1,
 })
+
+const [productLikeState,setProductLikeState] = useState<ProductLikeState>({
+  1: true,
+  2: true,
+})
+
+const toogleLikeState = (id:number) => {
+  setProductLikeState((prevState:ProductLikeState) => ({
+...prevState,
+[id]: !prevState[id]
+  }))
+}
 
 const addProductToCart = (id:number, count:number) => {
   setProductsInCart((prevState:ProductsInCart) => ({
@@ -38,6 +52,8 @@ const removeProductFromCart = (id:number) =>
     <Main addProductToCart={addProductToCart} productsInCart={productsInCart}
     removeProductFromCart={removeProductFromCart}
     changeProductQuantity={changeProductQuantity}
+    productLikeState={productLikeState}
+    toogleLikeState={toogleLikeState}
     />
     </StyledEngineProvider>
     

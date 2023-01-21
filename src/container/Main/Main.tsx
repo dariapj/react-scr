@@ -12,10 +12,14 @@ type Props = {
 addProductToCart:(id:number, count:number)  => void
 removeProductFromCart:(id:number) => void
 changeProductQuantity:(id:number,count:number) => void
+toogleLikeState: (id: number) => void
 productsInCart:{
   [id: number]: number}
+  productLikeState: {
+    [id:number]:boolean
+  }
 }
-const Main = ({addProductToCart, productsInCart, removeProductFromCart,changeProductQuantity}: Props) => {
+const Main = ({addProductToCart, productsInCart, removeProductFromCart,changeProductQuantity, productLikeState, toogleLikeState,}: Props) => {
   return (
     <Container maxWidth="lg" sx={{
         padding: '50px 0'
@@ -25,6 +29,8 @@ const Main = ({addProductToCart, productsInCart, removeProductFromCart,changePro
       <Routes>
         <Route path="/"
         element={<Home addProductToCart={addProductToCart}
+        productLikeState={productLikeState}
+        toogleLikeState={toogleLikeState}
         />}/>
       
       <Route path="about"
