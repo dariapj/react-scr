@@ -15,9 +15,9 @@ price: number
 image: string
 addProductToCart:(id:number, count:number)  => void
 isLiked?:boolean
-
+toogleLikeState: (id: number) => void
 }
-const ProductsListItem = ({id, title, desc, type, capacity, price, image, addProductToCart, isLiked=false}: Props) => {
+const ProductsListItem = ({id, title, desc, type, capacity, price, image, addProductToCart, isLiked=false, toogleLikeState}: Props) => {
 
     const [count, setCount] = useState<number>(1)
    // const [color, setColor] = useState<string>('green')
@@ -41,7 +41,7 @@ const ProductsListItem = ({id, title, desc, type, capacity, price, image, addPro
   return (
     <Card className='product' variant="outlined">
         <CardContent>
-            <Button variant="outlined">
+            <Button variant="outlined" onClick={() => toogleLikeState(id)}>
 {isLiked ? <FavoriteOutlinedIcon/> : <FavoriteBorderIcon/>}
             </Button>
             <div className='product-img'>

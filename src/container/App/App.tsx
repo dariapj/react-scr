@@ -18,10 +18,17 @@ const [productsInCart, setProductsInCart] = useState<ProductsInCart>({
   2:1,
 })
 
-const [productLikeState,setProductLikeSte] = useState<ProductLikeState>({
+const [productLikeState,setProductLikeState] = useState<ProductLikeState>({
   1: true,
   2: true,
 })
+
+const toogleLikeState = (id:number) => {
+  setProductLikeState((prevState:ProductLikeState) => ({
+...prevState,
+[id]: !prevState[id]
+  }))
+}
 
 const addProductToCart = (id:number, count:number) => {
   setProductsInCart((prevState:ProductsInCart) => ({
@@ -45,6 +52,8 @@ const removeProductFromCart = (id:number) =>
     <Main addProductToCart={addProductToCart} productsInCart={productsInCart}
     removeProductFromCart={removeProductFromCart}
     changeProductQuantity={changeProductQuantity}
+    productLikeState={productLikeState}
+    toogleLikeState={toogleLikeState}
     />
     </StyledEngineProvider>
     

@@ -17,8 +17,12 @@ image: string
 
 type Props = {
   addProductToCart:(id:number, count:number) => void
+  toogleLikeState: (id: number) => void
+  productLikeState: {
+    [id:number]:boolean
+  }
 }
-const ProductsList = ({addProductToCart}: Props) => {
+    const ProductsList = ({addProductToCart,toogleLikeState,productLikeState}: Props) => {
   return (
     <>
     <Grid container
@@ -30,7 +34,10 @@ const ProductsList = ({addProductToCart}: Props) => {
         {
             productsArray.map(({id, title, desc, type, capacity, price, image}: ProductsProps) => (
                 <Grid item xs={12} sm={6} md={4} key={id}>
-                <ProductsListItem id={id} title={title} desc={desc} type={type} capacity={capacity} price={price} image={image} addProductToCart={addProductToCart}></ProductsListItem>
+                <ProductsListItem id={id} title={title} desc={desc} type={type} capacity={capacity} price={price} image={image} addProductToCart={addProductToCart}
+                toogleLikeState={toogleLikeState}
+                isLiked={productLikeState[id]}
+                ></ProductsListItem>
             </Grid>
             ))
         }
