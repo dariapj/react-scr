@@ -51,10 +51,6 @@ const dispatch = useAppDispatch()
         <CardContent>
         <Button variant="outlined" onClick={() => dispatch(toggleLikeState(id))}>
             {isLiked ? <FavoriteOutlinedIcon /> : <FavoriteBorderIcon />}</Button>
-=======
-            <Button variant="outlined" onClick={() => toogleLikeState(id)}>
-{isLiked ? <FavoriteOutlinedIcon/> : <FavoriteBorderIcon/>}
-            </Button>
             <div className='product-img'>
                 <img src={image} alt="" />
             </div>
