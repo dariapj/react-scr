@@ -2,16 +2,11 @@ import { Button, Card, CardActions, CardContent, } from '@mui/material'
 import Quantity from 'components/Quantity/Quantity'
 import { useState } from 'react'
 import './ProductsListItem.scss'
-<<<<<<< HEAD
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { toggleLikeState } from 'redux/likeReducer'
 
-=======
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
->>>>>>> 0d4c9210910b60b92b882f6a861640db9c80a389
 
 type Props = {
     id:number
@@ -25,7 +20,8 @@ addProductToCart:(id:number, count:number)  => void
 isLiked?:boolean
 toogleLikeState: (id: number) => void
 }
-const ProductsListItem = ({id, title, desc, type, capacity, price, image, addProductToCart, isLiked=false, toogleLikeState}: Props) => {
+
+const ProductsListItem = ({id, title, desc, type, capacity, price, image, addProductToCart, toogleLikeState}: Props) => {
 
     const [count, setCount] = useState<number>(1)
    // const [color, setColor] = useState<string>('green')
@@ -53,14 +49,12 @@ const dispatch = useAppDispatch()
   return (
     <Card className='product' variant="outlined">
         <CardContent>
-<<<<<<< HEAD
         <Button variant="outlined" onClick={() => dispatch(toggleLikeState(id))}>
             {isLiked ? <FavoriteOutlinedIcon /> : <FavoriteBorderIcon />}</Button>
 =======
             <Button variant="outlined" onClick={() => toogleLikeState(id)}>
 {isLiked ? <FavoriteOutlinedIcon/> : <FavoriteBorderIcon/>}
             </Button>
->>>>>>> 0d4c9210910b60b92b882f6a861640db9c80a389
             <div className='product-img'>
                 <img src={image} alt="" />
             </div>
